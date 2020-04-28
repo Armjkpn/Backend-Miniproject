@@ -32,9 +32,9 @@ router.route('/employees/:employee_no')
     .get((req, res) => {
         let no = req.params.employee_no
         let index = employees.findIndex(employee => (employee.no === +no))
-        res.json(employees[index])                   // get a employee
+        res.json(employees[index])                
     })
-    .put((req, res) => {                               // Update a bear
+    .put((req, res) => {                           
         let no = req.params.employee_no
         let index = employees.findIndex(employee => (employee.no === +no))
         employees[index].name = req.body.name;
@@ -44,7 +44,7 @@ router.route('/employees/:employee_no')
         employees[index].tel = req.body.tel;
         res.json({ message: 'employee updated!' + req.params.employee_no });
     })
-    .delete((req, res) => {                   // Delete a bear
+    .delete((req, res) => {                  
         let no = req.params.employee_no
         let index = employees.findIndex(employee => employee.no === +no)
         employees.splice(index, 1)
